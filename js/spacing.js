@@ -79,6 +79,8 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 			this.renderHTML();
 
 			console.log(this.data);
+
+			return this;
 		},
 
 		//Methods
@@ -163,6 +165,41 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 
 				console.log(headline);
 			}
+		},
+		visual: function(){
+			var table = d.createElement("table");
+			for (var i = -1; i < spacings.length; i++) {
+				var tr = d.createElement("tr");
+				if(i === -1){
+					for (var j = -1; j < spacings[0].length; j++) {
+						if(j === -1){
+							var th = d.createElement("th");
+							tr.appendChild(th);
+						}else{
+							var th2 = d.createElement("th");
+							var text = d.createTextNode(letters[j]);
+							th2.appendChild(text);
+							tr.appendChild(th2);
+						}
+					}
+				}else{
+					for (var k = -1; k < spacings[0].length; k++) {
+						if(k === -1){
+							var td = d.createElement("td");
+							var text2 = d.createTextNode(letters[i]);
+							td.appendChild(text2);
+							tr.appendChild(td);
+						}else{
+							var td2 = d.createElement("td");
+							var text3 = d.createTextNode(spacings[i][k]);
+							td2.appendChild(text3);
+							tr.appendChild(td2);
+						}
+					}
+				}
+				table.appendChild(tr);
+			}
+			document.body.appendChild(table);
 		}
-	}.init();
+	}.init().visual();
 }(document, window));
