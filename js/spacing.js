@@ -26,7 +26,7 @@ var spacings = [
 	//L
 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 	//M
-	[0,200,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 	//N
 	[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
 	//O
@@ -93,7 +93,8 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 				data = [];
 
 			for (var i = 0; i < headlines.length; i++) {
-				for (var j = 0; j < headlines[j].length; j++) {
+				for (var j = 0; j < headlines[i].length; j++) {
+				console.log(headlines[i][j]);
 					data.push({
 											headline: headlines[i][j],
 											hierarchy: (i+1),
