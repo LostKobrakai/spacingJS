@@ -144,8 +144,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 					var spacing = pair.spacing/1000;
 
 					span.innerText = pair.pair[0];
-					span.style.paddingRight = spacing+"em";
-					console.log(span.style.paddingRight);
+					span.style.marginRight = spacing+"em";
 					spans.push(span);
 				}
 
