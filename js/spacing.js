@@ -104,6 +104,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 			}
 			return data;
 		},
+
 		setPairs: function(){
 			if(this.data.headlines === undefined) {return false;}
 
@@ -126,6 +127,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 				console.log(data);
 			}
 		},
+
 		renderHTML: function(){
 			if(this.data.headlines[0].pairs === undefined){return false;}
 
