@@ -96,11 +96,13 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 
 			for (var i = 0; i < headlines.length; i++) {
 				for (var j = 0; j < headlines[i].length; j++) {
-				console.log(headlines[i][j]);
+					console.log(headlines[i][j]);
+					var text = headlines[i][j].innerText;
+					if(text === undefined) {text = headlines[i][j].textContent;}
 					data.push({
 											headline: headlines[i][j],
 											hierarchy: (i+1),
-											text: headlines[i][j].innerText
+											text: text
 										});
 				}
 			}
@@ -112,7 +114,7 @@ var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 
 			for (var i = 0; i < this.data.headlines.length; i++) {
 				var data = this.data.headlines[i],
-					text = data.text,
+					text = this.data.headlines[i].text,
 					pairs = [];
 				for (var j = 0; j < text.length-1; j++) {
 					var firstletter = text[j],
